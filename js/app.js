@@ -14,3 +14,33 @@ window.addEventListener("load", function () {
     }, 1000);
 
 });
+
+/* =========================
+   Mobile Navigation
+========================= */
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navLinks = document.querySelector(".nav-links");
+
+menuToggle.addEventListener("click", function () {
+
+    navLinks.classList.toggle("active");
+
+});
+
+/* =========================
+   Close Mobile Menu
+   After Link Click
+========================= */
+
+const navItems = document.querySelectorAll(".nav-links a");
+
+navItems.forEach(function (link) {
+
+    link.addEventListener("click", function () {
+
+        navLinks.classList.remove("active");
+
+    });
+
+});

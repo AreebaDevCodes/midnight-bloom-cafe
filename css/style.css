@@ -231,3 +231,47 @@ body {
 
     cursor: pointer;
 }
+
+/* =========================
+   Mobile Navigation
+========================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        min-height: 70px;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 70px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 1.5rem 0;
+
+        flex-direction: column;
+        gap: 1.5rem;
+
+        background: rgba(15, 15, 15, 0.97);
+
+        border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+
+        transform: translateY(-150%);
+        transition: transform 0.4s ease;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+}
