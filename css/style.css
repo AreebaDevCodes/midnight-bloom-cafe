@@ -1,0 +1,233 @@
+/* ===========================
+   Midnight Bloom Café
+   Global Styles
+   Version 1.0
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-bg: #0F0F0F;
+    --secondary-bg: #181818;
+    --gold: #D4AF37;
+    --cream: #F8F5F0;
+    --coffee: #6F4E37;
+    --accent: #B76E79;
+
+    --transition: 0.3s ease;
+    --border-radius: 12px;
+}
+
+body {
+    background-color: var(--primary-bg);
+    color: var(--cream);
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* =========================
+   Luxury Loading Screen
+========================= */
+
+#loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--primary-bg);
+
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+/* Loader content */
+
+#loader::before {
+    content: "MIDNIGHT BLOOM";
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 0.35rem;
+
+    color: var(--gold);
+
+    animation: loaderPulse 1.8s ease-in-out infinite;
+}
+
+/* Loader disappears */
+
+#loader.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Soft breathing animation */
+
+@keyframes loaderPulse {
+
+    0%,
+    100% {
+        opacity: 0.35;
+        transform: scale(0.96);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* =========================
+   Navigation Bar
+========================= */
+
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(15, 15, 15, 0.85);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.navbar {
+    width: min(1200px, 90%);
+    min-height: 80px;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+
+.logo {
+    color: var(--cream);
+    text-decoration: none;
+
+    font-family: "Cormorant Garamond", serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: 0.08rem;
+
+    line-height: 1;
+}
+
+.logo span {
+    display: block;
+
+    color: var(--gold);
+
+    font-size: 0.85rem;
+    letter-spacing: 0.35rem;
+    text-transform: uppercase;
+
+    margin-top: 5px;
+}
+
+/* Navigation Links */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    list-style: none;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: var(--cream);
+    text-decoration: none;
+
+    font-size: 0.9rem;
+    font-weight: 400;
+
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+/* Underline Animation */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold);
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Reservation Button */
+
+.nav-button {
+    padding: 0.75rem 1.3rem;
+
+    color: var(--primary-bg);
+    background: var(--gold);
+
+    text-decoration: none;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.05rem;
+
+    border: 1px solid var(--gold);
+    border-radius: 2px;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.nav-button:hover {
+    color: var(--gold);
+    background: transparent;
+
+    transform: translateY(-2px);
+}
+
+/* Mobile Menu Button */
+
+.menu-toggle {
+    display: none;
+
+    border: none;
+    background: transparent;
+
+    color: var(--cream);
+
+    font-size: 1.6rem;
+
+    cursor: pointer;
+}
