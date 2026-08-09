@@ -16,167 +16,1108 @@
     <meta name="keywords"
         content="Cafe, Coffee, Midnight Bloom, Restaurant, Reservation, Coffee Shop">
 
+    <!-- Developers -->
     <meta name="author"
         content="Abdullah & Areeba">
 
     <!-- Browser Tab -->
     <title>Midnight Bloom Café</title>
 
-    <!-- Google Fonts -->
-     
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- =========================
+         Google Fonts
+    ========================== -->
 
-    <!-- CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- =========================
+         CSS
+    ========================== -->
+
     <link rel="stylesheet" href="css/style.css">
 
 </head>
 
+
 <body>
+
 
     <!-- =========================
          Loading Screen
     ========================== -->
-    <div id="loader">
 
+    <div id="loader">
     </div>
+
 
     <!-- =========================
          Mouse Glow Effect
     ========================== -->
-    <div id="cursor-glow"></div>
+
+    <div id="cursor-glow">
+    </div>
+
 
     <!-- =========================
-         Header
+         Header / Navbar
     ========================== -->
-    <header>
 
-        <nav>
+    <header class="site-header">
 
-          <header class="site-header">
+        <nav class="navbar">
 
-    <nav class="navbar">
 
-        <!-- Logo -->
-        <a href="index.html" class="logo">
-            Midnight Bloom
-            <span>Café</span>
-        </a>
+            <!-- Logo -->
 
-        <!-- Navigation Links -->
-        <ul class="nav-links">
+            <a href="index.html" class="logo">
 
-            <li>
-                <a href="#hero">Home</a>
-            </li>
+                Midnight Bloom
 
-            <li>
-                <a href="#about">About</a>
-            </li>
+                <span>Café</span>
 
-            <li>
-                <a href="#menu-preview">Menu</a>
-            </li>
+            </a>
 
-            <li>
-                <a href="#reservation">Reservation</a>
-            </li>
 
-            <li>
-                <a href="#reviews">Reviews</a>
-            </li>
+            <!-- Navigation Links -->
 
-        </ul>
+            <ul class="nav-links">
 
-        <!-- Reservation Button -->
-        <a href="#reservation" class="nav-button">
-            Reserve a Table
-        </a>
+                <li>
+                    <a href="#hero">Home</a>
+                </li>
 
-        <!-- Mobile Menu Button -->
-        <button class="menu-toggle" aria-label="Open navigation menu">
-            ☰
-        </button>
+                <li>
+                    <a href="#about">About</a>
+                </li>
 
-    </nav>
+                <li>
+                    <a href="#menu-preview">Menu</a>
+                </li>
 
-</header>
+                <li>
+                    <a href="#reservation">Reservation</a>
+                </li>
+
+                <li>
+                    <a href="#reviews">Reviews</a>
+                </li>
+
+            </ul>
+
+
+            <!-- Reservation Button -->
+
+            <a href="#reservation" class="nav-button">
+                Reserve a Table
+            </a>
+
+
+            <!-- Mobile Menu Button -->
+
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation menu">
+
+                ☰
+
+            </button>
+
 
         </nav>
 
     </header>
 
+
+
     <!-- =========================
-         Hero Section
+         Main Content
     ========================== -->
+
     <main>
 
-        <section id="hero">
+
+        <!-- =========================
+             Hero Section
+        ========================== -->
+
+        <section class="hero" id="hero">
+
+
+            <!-- Hero Background Overlay -->
+
+            <div class="hero-overlay">
+            </div>
+
+
+            <!-- Hero Content -->
+
+            <div class="hero-content">
+
+
+                <p class="hero-label">
+                    EST. 2026 · COFFEE & CONVERSATIONS
+                </p>
+
+
+                <h1>
+
+                    Where Every Night
+
+                    <span>
+                        Feels Special.
+                    </span>
+
+                </h1>
+
+
+                <p class="hero-description">
+
+                    Coffee, conversations, and midnight moments.
+                    A little magic in every cup.
+
+                </p>
+
+
+                <div class="hero-actions">
+
+
+                    <a
+                        href="#menu-preview"
+                        class="primary-button">
+
+                        Explore Our Menu
+
+                    </a>
+
+
+                    <a
+                        href="#reservation"
+                        class="secondary-button">
+
+                        Reserve a Table
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Scroll Indicator -->
+
+            <a
+                href="#about"
+                class="scroll-indicator"
+                aria-label="Scroll to About section">
+
+                <span>
+                    Scroll to explore
+                </span>
+
+                <span class="scroll-arrow">
+                    ↓
+                </span>
+
+            </a>
+
 
         </section>
 
+
+
+        <!-- =========================
+             About Section
+        ========================== -->
+
+        <section
+            class="about-section"
+            id="about">
+
+
+            <div class="about-container">
+
+
+                <!-- About Image -->
+
+                <div class="about-image">
+
+                    <div class="about-image-frame">
+
+                        <span>
+                            Since
+                        </span>
+
+                        <strong>
+                            2026
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- About Content -->
+
+                <div class="about-content">
+
+
+                    <p class="section-label">
+                        OUR STORY
+                    </p>
+
+
+                    <h2>
+
+                        More Than
+
+                        <span>
+                            Just Coffee.
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Midnight Bloom Café was created
+                        for those little moments that deserve
+                        to last a little longer.
+
+                    </p>
+
+
+                    <p>
+
+                        From carefully crafted coffee to
+                        warm conversations, every corner is
+                        designed to feel calm, intimate,
+                        and a little magical.
+
+                    </p>
+
+
+                    <a
+                        href="#menu-preview"
+                        class="text-link">
+
+                        Discover our menu
+
+                        <span>
+                            →
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================
+             Menu Preview Section
+        ========================== -->
+
+        <section
+            class="menu-preview"
+            id="menu-preview">
+
+
+            <!-- Section Heading -->
+
+            <div class="section-heading">
+
+
+                <p class="section-label">
+                    OUR MENU
+                </p>
+
+
+                <h2>
+
+                    Made to be
+
+                    <span>
+                        remembered.
+                    </span>
+
+                </h2>
+
+
+                <p class="section-intro">
+
+                    From slow mornings to late-night
+                    conversations, discover something
+                    worth coming back for.
+
+                </p>
+
+
+            </div>
+
+
+
+            <!-- Menu Categories -->
+
+            <div class="menu-categories">
+
+
+                <button
+                    class="menu-category active"
+                    type="button"
+                    data-category="coffee">
+
+                    Coffee
+
+                </button>
+
+
+                <button
+                    class="menu-category"
+                    type="button"
+                    data-category="desserts">
+
+                    Desserts
+
+                </button>
+
+
+                <button
+                    class="menu-category"
+                    type="button"
+                    data-category="breakfast">
+
+                    Breakfast
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- Menu Cards -->
+
+            <div class="menu-grid">
+
+
+                <!-- Coffee Item 1 -->
+
+                <article
+                    class="menu-card show"
+                    data-category="coffee">
+
+
+                    <div class="menu-card-image coffee-image-1">
+
+
+                        <span class="menu-badge">
+                            Popular
+                        </span>
+
+
+                    </div>
+
+
+                    <div class="menu-card-content">
+
+
+                        <div class="menu-card-title">
+
+
+                            <h3>
+                                Midnight Latte
+                            </h3>
+
+
+                            <span>
+                                $5.50
+                            </span>
+
+
+                        </div>
+
+
+                        <p>
+
+                            Smooth espresso, steamed milk,
+                            and a touch of vanilla.
+
+                        </p>
+
+
+                        <button
+                            class="add-to-cart"
+                            type="button"
+                            data-item="Midnight Latte"
+                            data-price="5.50">
+
+                            Add to order
+
+                            <span>
+                                +
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- Coffee Item 2 -->
+
+                <article
+                    class="menu-card show"
+                    data-category="coffee">
+
+
+                    <div class="menu-card-image coffee-image-2">
+                    </div>
+
+
+                    <div class="menu-card-content">
+
+
+                        <div class="menu-card-title">
+
+
+                            <h3>
+                                Velvet Cappuccino
+                            </h3>
+
+
+                            <span>
+                                $5.00
+                            </span>
+
+
+                        </div>
+
+
+                        <p>
+
+                            Rich espresso with silky foam
+                            and delicate cocoa notes.
+
+                        </p>
+
+
+                        <button
+                            class="add-to-cart"
+                            type="button"
+                            data-item="Velvet Cappuccino"
+                            data-price="5.00">
+
+                            Add to order
+
+                            <span>
+                                +
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+                </article>
+
+
+
+                <!-- Dessert Item -->
+
+                <article
+                    class="menu-card"
+                    data-category="desserts">
+
+
+                    <div class="menu-card-image coffee-image-3">
+                    </div>
+
+
+                    <div class="menu-card-content">
+
+
+                        <div class="menu-card-title">
+
+
+                            <h3>
+                                Midnight Chocolate Cake
+                            </h3>
+
+
+                            <span>
+                                $6.50
+                            </span>
+
+
+                        </div>
+
+
+                        <p>
+
+                            Dark chocolate cake with a rich
+                            espresso ganache.
+
+                        </p>
+
+
+                        <button
+                            class="add-to-cart"
+                            type="button"
+                            data-item="Midnight Chocolate Cake"
+                            data-price="6.50">
+
+                            Add to order
+
+                            <span>
+                                +
+                            </span>
+
+                        </button>
+
+
+                    </div>
+
+
+                </article>
+
+                <!-- Breakfast Item 1 -->
+
+<article
+    class="menu-card"
+    data-category="breakfast">
+
+    <div class="menu-card-image breakfast-image-1">
+    </div>
+
+    <div class="menu-card-content">
+
+        <div class="menu-card-title">
+
+            <h3>
+                Bloom Breakfast
+            </h3>
+
+            <span>
+                $8.50
+            </span>
+
+        </div>
+
+        <p>
+            Toasted sourdough, eggs, avocado,
+            and fresh seasonal greens.
+        </p>
+
+        <button
+            class="add-to-cart"
+            type="button"
+            data-item="Bloom Breakfast"
+            data-price="8.50">
+
+            Add to order
+
+            <span>
+                +
+            </span>
+
+        </button>
+
+    </div>
+
+</article>
+
+
+<!-- Breakfast Item 2 -->
+
+<article
+    class="menu-card"
+    data-category="breakfast">
+
+    <div class="menu-card-image breakfast-image-2">
+    </div>
+
+    <div class="menu-card-content">
+
+        <div class="menu-card-title">
+
+            <h3>
+                Honey French Toast
+            </h3>
+
+            <span>
+                $7.50
+            </span>
+
+        </div>
+
+        <p>
+            Golden brioche, honey, berries,
+            and a touch of cinnamon.
+        </p>
+
+        <button
+            class="add-to-cart"
+            type="button"
+            data-item="Honey French Toast"
+            data-price="7.50">
+
+            Add to order
+
+            <span>
+                +
+            </span>
+
+        </button>
+
+    </div>
+
+</article>
+
+
+            </div>
+
+            
+<!-- =========================
+     Why Midnight Bloom
+========================== -->
+
+<section class="why-section" id="why-us">
+
+    <div class="why-container">
+
+        <!-- Section Heading -->
+
+        <div class="why-heading">
+
+            <p class="section-label">
+                THE MIDNIGHT EXPERIENCE
+            </p>
+
+            <h2>
+                Crafted for
+                <span>your moments.</span>
+            </h2>
+
+            <p>
+                More than a café, Midnight Bloom is a place
+                to slow down, connect, and make ordinary
+                moments feel a little more special.
+            </p>
+
+        </div>
+
+
+        <!-- Feature Cards -->
+
+        <div class="why-grid">
+
+
+            <!-- Feature 1 -->
+
+            <article class="why-card">
+
+                <div class="why-icon">
+                    ✦
+                </div>
+
+                <h3>
+                    Freshly Crafted
+                </h3>
+
+                <p>
+                    Every cup and plate is prepared with
+                    carefully selected ingredients and attention
+                    to every little detail.
+                </p>
+
+            </article>
+
+
+            <!-- Feature 2 -->
+
+            <article class="why-card">
+
+                <div class="why-icon">
+                    ◌
+                </div>
+
+                <h3>
+                    Cozy Atmosphere
+                </h3>
+
+                <p>
+                    A warm, intimate space designed for
+                    peaceful mornings, deep conversations,
+                    and unforgettable nights.
+                </p>
+
+            </article>
+
+
+            <!-- Feature 3 -->
+
+            <article class="why-card">
+
+                <div class="why-icon">
+                    ✧
+                </div>
+
+                <h3>
+                    Premium Ingredients
+                </h3>
+
+                <p>
+                    Quality comes first, from our coffee beans
+                    to the ingredients that make every dish
+                    worth remembering.
+                </p>
+
+            </article>
+
+
+            <!-- Feature 4 -->
+
+            <article class="why-card">
+
+                <div class="why-icon">
+                    ☾
+                </div>
+
+                <h3>
+                    Open Late
+                </h3>
+
+                <p>
+                    Because some of the best conversations
+                    happen after sunset. Stay a little longer
+                    and enjoy the midnight mood.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+            <!-- View Full Menu -->
+
+            <div class="menu-view-all">
+
+
+                <a
+                    href="pages/menu.html"
+                    class="text-link">
+
+                    View full menu
+
+                    <span>
+                        →
+                    </span>
+
+                </a>
+
+
+            </div>
+
+
+        </section>
+
+      <!-- =========================
+     Reservation CTA
+========================== -->
+
+<section class="reservation-cta" id="reservation">
+
+    <div class="reservation-content">
+
+        <p class="section-label">
+            YOUR NEXT MOMENT
+        </p>
+
+        <h2>
+            Your table is
+            <span>waiting.</span>
+        </h2>
+
+        <p>
+            Whether it's a quiet coffee, a late-night
+            conversation, or something worth celebrating,
+            we'd love to have you with us.
+        </p>
+
+        <a
+            href="pages/reservation.html"
+            class="primary-button">
+
+            Reserve a Table
+
+            <span>→</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     Reviews Section
+========================== -->
+
+<section class="reviews-section" id="reviews">
+
+    <div class="reviews-container">
+
+        <!-- Section Heading -->
+
+        <div class="reviews-heading">
+
+            <p class="section-label">
+                GUESTS LOVE US
+            </p>
+
+            <h2>
+                Moments worth
+                <span>remembering.</span>
+            </h2>
+
+        </div>
+
+
+        <!-- Reviews -->
+
+        <div class="reviews-grid">
+
+
+            <!-- Review 1 -->
+
+            <article class="review-card">
+
+                <div class="review-stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+                    “The coffee was amazing and the atmosphere
+                    was exactly what I needed. Such a beautiful
+                    little place.”
+                </p>
+
+                <div class="review-author">
+                    <strong>
+                        Sarah M.
+                    </strong>
+
+                    <span>
+                        Café Guest
+                    </span>
+                </div>
+
+            </article>
+
+
+            <!-- Review 2 -->
+
+            <article class="review-card">
+
+                <div class="review-stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+                    “Absolutely loved the cozy atmosphere.
+                    The Midnight Latte is now officially
+                    my favorite.”
+                </p>
+
+                <div class="review-author">
+                    <strong>
+                        Daniel R.
+                    </strong>
+
+                    <span>
+                        Café Guest
+                    </span>
+                </div>
+
+            </article>
+
+
+            <!-- Review 3 -->
+
+            <article class="review-card">
+
+                <div class="review-stars">
+                    ★★★★★
+                </div>
+
+                <p class="review-text">
+                    “Perfect place for a late-night coffee
+                    and good conversation. I'll definitely
+                    be coming back.”
+                </p>
+
+                <div class="review-author">
+                    <strong>
+                        Emma K.
+                    </strong>
+
+                    <span>
+                        Café Guest
+                    </span>
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
     </main>
 
-    <!-- =========================
-         About Section
-    ========================== -->
-    <section id="about">
 
-    </section>
-
-    <!-- =========================
-         Featured Coffee
-    ========================== -->
-    <section id="featured">
-
-    </section>
-
-    <!-- =========================
-         Menu Preview
-    ========================== -->
-    <section id="menu-preview">
-
-    </section>
-
-    <!-- =========================
-         Gallery
-    ========================== -->
-    <section id="gallery">
-
-    </section>
-
-    <!-- =========================
-         Reviews
-    ========================== -->
-    <section id="reviews">
-
-    </section>
-
-    <!-- =========================
-         Reservation Preview
-    ========================== -->
-    <section id="reservation">
-
-    </section>
-
-    <!-- =========================
-         Newsletter
-    ========================== -->
-    <section id="newsletter">
-
-    </section>
 
     <!-- =========================
          Footer
     ========================== -->
+
     <footer>
+
+<!-- =========================
+     Footer
+========================== -->
+
+<footer class="site-footer">
+
+    <div class="footer-container">
+
+
+        <!-- Brand -->
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="footer-logo">
+                Midnight Bloom
+                <span>Café</span>
+            </a>
+
+            <p>
+                Coffee, conversations, and midnight moments.
+                A little magic in every cup.
+            </p>
+
+        </div>
+
+
+        <!-- Quick Links -->
+
+        <div class="footer-column">
+
+            <h3>
+                Explore
+            </h3>
+
+            <a href="#hero">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#menu-preview">
+                Menu
+            </a>
+
+            <a href="#reviews">
+                Reviews
+            </a>
+
+        </div>
+
+
+        <!-- Visit -->
+
+        <div class="footer-column">
+
+            <h3>
+                Visit Us
+            </h3>
+
+            <p>
+                12 Bloom Street
+            </p>
+
+            <p>
+                Open Daily · 8 AM – 12 AM
+            </p>
+
+            <a href="#reservation">
+                Reserve a Table
+            </a>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- Footer Bottom -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Midnight Bloom Café.
+            All rights reserved.
+        </p>
+
+        <p>
+            Crafted with ☕ by Abdullah & Areeba
+        </p>
+
+    </div>
+
+</footer>
 
     </footer>
 
-    <!-- JavaScript -->
+
+
+    <!-- =========================
+         JavaScript
+    ========================== -->
+
     <script src="js/app.js"></script>
+
 
 </body>
 

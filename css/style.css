@@ -262,9 +262,9 @@ body {
         transition: transform 0.4s ease;
     }
 
-    .nav-links.active {
-        transform: translateY(0);
-    }
+    .nav-links.open {
+    transform: translateY(0);
+}
 
     .nav-button {
         display: none;
@@ -272,6 +272,1467 @@ body {
 
     .menu-toggle {
         display: block;
+    }
+
+}
+
+/* =========================
+   Hero Section
+========================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(10, 10, 10, 0.55),
+            rgba(10, 10, 10, 0.75)
+        ),
+        url("../assets/images/cafe-hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Hero Overlay */
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            transparent 0%,
+            rgba(10, 10, 10, 0.35) 60%,
+            rgba(10, 10, 10, 0.75) 100%
+        );
+
+    pointer-events: none;
+}
+
+/* Hero Content */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: min(850px, 90%);
+
+    text-align: center;
+
+    margin-top: 80px;
+}
+
+/* Small Label */
+
+.hero-label {
+    margin-bottom: 1.2rem;
+
+    color: var(--gold);
+
+    font-size: 0.75rem;
+    font-weight: 600;
+
+    letter-spacing: 0.25rem;
+
+    text-transform: uppercase;
+}
+
+/* Main Heading */
+
+.hero h1 {
+    margin: 0;
+
+    color: var(--cream);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(3.5rem, 8vw, 7rem);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+
+    letter-spacing: -0.02em;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+/* Description */
+
+.hero-description {
+    max-width: 550px;
+
+    margin: 2rem auto 0;
+
+    color: rgba(245, 240, 230, 0.82);
+
+    font-size: 1.05rem;
+
+    line-height: 1.8;
+}
+
+/* Hero Buttons */
+
+.hero-actions {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 1rem;
+
+    margin-top: 2.5rem;
+}
+
+.primary-button,
+.secondary-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 170px;
+
+    padding: 0.9rem 1.4rem;
+
+    text-decoration: none;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    letter-spacing: 0.06rem;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Primary Button */
+
+.primary-button {
+    color: var(--primary-bg);
+
+    background: var(--gold);
+
+    border: 1px solid var(--gold);
+}
+
+.primary-button:hover {
+    color: var(--gold);
+
+    background: transparent;
+
+    transform: translateY(-3px);
+}
+
+/* Secondary Button */
+
+.secondary-button {
+    color: var(--cream);
+
+    background: transparent;
+
+    border: 1px solid rgba(245, 240, 230, 0.55);
+}
+
+.secondary-button:hover {
+    color: var(--primary-bg);
+
+    background: var(--cream);
+
+    border-color: var(--cream);
+
+    transform: translateY(-3px);
+}
+
+/* Scroll Indicator */
+
+.scroll-indicator {
+    position: absolute;
+
+    bottom: 2rem;
+    left: 50%;
+
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 0.4rem;
+
+    transform: translateX(-50%);
+
+    color: rgba(245, 240, 230, 0.65);
+
+    text-decoration: none;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.15rem;
+
+    text-transform: uppercase;
+}
+
+.scroll-arrow {
+    font-size: 1.2rem;
+
+    animation: scrollBounce 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+
+}
+
+/* =========================
+   Hero Mobile
+========================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 100svh;
+
+        background-position: center;
+    }
+
+    .hero-content {
+        margin-top: 60px;
+    }
+
+    .hero-label {
+        font-size: 0.65rem;
+
+        letter-spacing: 0.16rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(3rem, 14vw, 5rem);
+
+        line-height: 0.98;
+    }
+
+    .hero-description {
+        margin-top: 1.5rem;
+
+        font-size: 0.95rem;
+
+        line-height: 1.7;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+
+        width: 100%;
+
+        margin-top: 2rem;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: min(280px, 90%);
+    }
+
+    .scroll-indicator {
+        bottom: 1.2rem;
+    }
+
+}
+
+/* =========================
+   About Section
+========================= */
+
+.about-section {
+    padding: 8rem 0;
+
+    background: var(--primary-bg);
+}
+
+.about-container {
+    width: min(1100px, 90%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 6rem;
+}
+
+/* About Image */
+
+.about-image {
+    position: relative;
+
+    min-height: 520px;
+
+    background:
+        linear-gradient(
+            rgba(10, 10, 10, 0.25),
+            rgba(10, 10, 10, 0.45)
+        ),
+        url("../assets/images/about-cafe.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    border: 1px solid rgba(212, 175, 55, 0.25);
+}
+
+/* Decorative Frame */
+
+.about-image-frame {
+    position: absolute;
+
+    right: -35px;
+    bottom: -35px;
+
+    width: 150px;
+    height: 150px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background: var(--gold);
+
+    color: var(--primary-bg);
+
+    text-align: center;
+}
+
+.about-image-frame span {
+    font-size: 0.7rem;
+
+    letter-spacing: 0.15rem;
+
+    text-transform: uppercase;
+}
+
+.about-image-frame strong {
+    margin-top: 0.3rem;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2.8rem;
+
+    font-weight: 500;
+}
+
+/* About Content */
+
+.about-content {
+    max-width: 500px;
+}
+
+.section-label {
+    margin-bottom: 1.2rem;
+
+    color: var(--gold);
+
+    font-size: 0.7rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.25rem;
+
+    text-transform: uppercase;
+}
+
+.about-content h2 {
+    margin: 0;
+
+    color: var(--cream);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(3rem, 5vw, 4.5rem);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+.about-content h2 span {
+    display: block;
+
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+.about-content p:not(.section-label) {
+    margin-top: 1.5rem;
+
+    color: rgba(245, 240, 230, 0.7);
+
+    font-size: 0.95rem;
+
+    line-height: 1.9;
+}
+
+/* Text Link */
+
+.text-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.7rem;
+
+    margin-top: 2rem;
+
+    color: var(--cream);
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.05rem;
+
+    border-bottom: 1px solid var(--gold);
+
+    padding-bottom: 0.4rem;
+}
+
+.text-link span {
+    color: var(--gold);
+
+    transition: transform 0.3s ease;
+}
+
+.text-link:hover span {
+    transform: translateX(5px);
+}
+
+/* =========================
+   About Mobile
+========================= */
+
+@media (max-width: 768px) {
+
+    .about-section {
+        padding: 6rem 0;
+    }
+
+    .about-container {
+        grid-template-columns: 1fr;
+
+        gap: 4rem;
+    }
+
+    .about-image {
+        min-height: 400px;
+    }
+
+    .about-image-frame {
+        right: 15px;
+        bottom: -25px;
+
+        width: 125px;
+        height: 125px;
+    }
+
+    .about-image-frame strong {
+        font-size: 2.3rem;
+    }
+
+    .about-content {
+        max-width: 100%;
+    }
+
+}
+
+/* =========================
+   Menu Preview
+========================= */
+
+.menu-preview {
+    padding: 8rem 0;
+
+    background: #11100f;
+}
+
+.section-heading {
+    width: min(700px, 90%);
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin: 0;
+
+    color: var(--cream);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(3rem, 6vw, 5rem);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+.section-heading h2 span {
+    display: block;
+
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+.section-intro {
+    max-width: 550px;
+
+    margin: 1.5rem auto 0;
+
+    color: rgba(245, 240, 230, 0.65);
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+}
+
+
+/* Menu Categories */
+
+.menu-categories {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 2rem;
+
+    margin-top: 3rem;
+}
+
+.menu-category {
+    padding: 0.6rem 0;
+
+    color: rgba(245, 240, 230, 0.55);
+
+    background: transparent;
+
+    border: none;
+    border-bottom: 1px solid transparent;
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.08rem;
+
+    transition:
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.menu-category:hover,
+.menu-category.active {
+    color: var(--gold);
+
+    border-bottom-color: var(--gold);
+}
+
+
+/* Menu Grid */
+
+.menu-grid {
+    width: min(1100px, 90%);
+
+    margin: 4rem auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1.5rem;
+}
+
+
+/* Menu Card */
+
+.menu-card {
+    overflow: hidden;
+
+    background: #171615;
+
+    border: 1px solid rgba(245, 240, 230, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.menu-card:hover {
+    transform: translateY(-7px);
+
+    border-color: rgba(212, 175, 55, 0.35);
+}
+
+
+/* Card Images */
+
+.menu-card-image {
+    position: relative;
+
+    height: 280px;
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/*
+   Temporary coffee backgrounds.
+   Real images will be added later.
+*/
+
+.coffee-image-1 {
+    background:
+        linear-gradient(
+            rgba(40, 25, 15, 0.2),
+            rgba(10, 10, 10, 0.5)
+        ),
+        url("../assets/images/coffee-1.jpg");
+}
+
+.coffee-image-2 {
+    background:
+        linear-gradient(
+            rgba(40, 25, 15, 0.2),
+            rgba(10, 10, 10, 0.5)
+        ),
+        url("../assets/images/coffee-2.jpg");
+}
+
+.coffee-image-3 {
+    background:
+        linear-gradient(
+            rgba(40, 25, 15, 0.2),
+            rgba(10, 10, 10, 0.5)
+        ),
+        url("../assets/images/coffee-3.jpg");
+}
+
+
+/* Badge */
+
+.menu-badge {
+    position: absolute;
+
+    top: 1rem;
+    left: 1rem;
+
+    padding: 0.4rem 0.7rem;
+
+    color: var(--primary-bg);
+
+    background: var(--gold);
+
+    font-size: 0.65rem;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08rem;
+
+    text-transform: uppercase;
+}
+
+
+/* Card Content */
+
+.menu-card-content {
+    padding: 1.5rem;
+}
+
+.menu-card-title {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 1rem;
+}
+
+.menu-card-title h3 {
+    margin: 0;
+
+    color: var(--cream);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.6rem;
+
+    font-weight: 500;
+}
+
+.menu-card-title span {
+    color: var(--gold);
+
+    font-size: 0.85rem;
+
+    font-weight: 600;
+}
+
+.menu-card-content p {
+    min-height: 50px;
+
+    margin: 0.8rem 0 1.3rem;
+
+    color: rgba(245, 240, 230, 0.55);
+
+    font-size: 0.82rem;
+
+    line-height: 1.6;
+}
+
+
+/* Add To Cart */
+
+.add-to-cart {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0.8rem 0;
+
+    color: var(--cream);
+
+    background: transparent;
+
+    border: none;
+    border-top: 1px solid rgba(245, 240, 230, 0.1);
+
+    cursor: pointer;
+
+    font-family: inherit;
+
+    font-size: 0.75rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.05rem;
+
+    transition: color 0.3s ease;
+}
+
+.add-to-cart span {
+    color: var(--gold);
+
+    font-size: 1.2rem;
+
+    transition: transform 0.3s ease;
+}
+
+.add-to-cart:hover {
+    color: var(--gold);
+}
+
+.add-to-cart:hover span {
+    transform: rotate(90deg);
+}
+
+
+/* View All */
+
+.menu-view-all {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 3rem;
+}
+
+/* =========================
+   Menu Mobile
+========================= */
+
+@media (max-width: 768px) {
+
+    .menu-preview {
+        padding: 6rem 0;
+    }
+
+    .menu-categories {
+        gap: 1.2rem;
+
+        overflow-x: auto;
+
+        justify-content: flex-start;
+
+        width: 90%;
+
+        margin-left: auto;
+        margin-right: auto;
+
+        padding-bottom: 0.5rem;
+    }
+
+    .menu-category {
+        flex-shrink: 0;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+
+        width: min(420px, 90%);
+
+        gap: 2rem;
+
+        margin-top: 3rem;
+    }
+
+    .menu-card-image {
+        height: 260px;
+    }
+
+    .menu-card-content {
+        padding: 1.3rem;
+    }
+
+}
+
+/* =========================
+   Menu Filter Visibility
+========================= */
+
+.menu-card {
+    display: none;
+}
+
+.menu-card.show {
+    display: block;
+}
+
+/* =========================
+   Breakfast Images
+========================= */
+
+.breakfast-image-1 {
+    background:
+        linear-gradient(
+            rgba(40, 25, 15, 0.2),
+            rgba(10, 10, 10, 0.5)
+        ),
+        url("../assets/images/breakfast-1.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.breakfast-image-2 {
+    background:
+        linear-gradient(
+            rgba(40, 25, 15, 0.2),
+            rgba(10, 10, 10, 0.5)
+        ),
+        url("../assets/images/breakfast-2.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* =========================
+   Why Midnight Bloom
+========================= */
+
+.why-section {
+    padding: 8rem 0;
+
+    background: #0d0c0b;
+}
+
+.why-container {
+    width: min(1100px, 90%);
+
+    margin: 0 auto;
+}
+
+.why-heading {
+    max-width: 650px;
+
+    margin: 0 auto 4rem;
+
+    text-align: center;
+}
+
+.why-heading h2 {
+    margin: 0;
+
+    color: var(--cream);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(3rem, 6vw, 5rem);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+.why-heading h2 span {
+    display: block;
+
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+.why-heading > p:last-child {
+    max-width: 550px;
+
+    margin: 1.5rem auto 0;
+
+    color: rgba(245, 240, 230, 0.6);
+
+    font-size: 0.9rem;
+
+    line-height: 1.8;
+}
+
+
+/* Feature Grid */
+
+.why-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 1rem;
+}
+
+
+/* Feature Card */
+
+.why-card {
+    padding: 2rem 1.5rem;
+
+    background: #151413;
+
+    border: 1px solid rgba(245, 240, 230, 0.08);
+
+    text-align: center;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.why-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(212, 175, 55, 0.35);
+}
+
+
+/* Icons */
+
+.why-icon {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin: 0 auto 1.3rem;
+
+    color: var(--gold);
+
+    border: 1px solid rgba(212, 175, 55, 0.35);
+
+    border-radius: 50%;
+
+    font-size: 1.2rem;
+}
+
+
+/* Card Text */
+
+.why-card h3 {
+    margin: 0 0 0.8rem;
+
+    color: var(--cream);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.5rem;
+
+    font-weight: 500;
+}
+
+.why-card p {
+    margin: 0;
+
+    color: rgba(245, 240, 230, 0.5);
+
+    font-size: 0.78rem;
+
+    line-height: 1.7;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .why-section {
+        padding: 6rem 0;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+    }
+
+    .why-card {
+        padding: 2rem;
+    }
+
+}
+
+/* =========================
+   Reservation CTA
+========================= */
+
+.reservation-cta {
+    position: relative;
+
+    padding: 8rem 1.5rem;
+
+    background:
+        linear-gradient(
+            rgba(10, 9, 8, 0.78),
+            rgba(10, 9, 8, 0.9)
+        ),
+        url("../assets/images/reservation-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    text-align: center;
+}
+
+.reservation-content {
+    width: min(650px, 90%);
+
+    margin: 0 auto;
+}
+
+.reservation-content h2 {
+    margin: 0;
+
+    color: var(--cream);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(3rem, 6vw, 5rem);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+.reservation-content h2 span {
+    display: block;
+
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+.reservation-content > p:not(.section-label) {
+    max-width: 520px;
+
+    margin: 1.5rem auto 2rem;
+
+    color: rgba(245, 240, 230, 0.65);
+
+    font-size: 0.9rem;
+
+    line-height: 1.8;
+}
+
+.reservation-content .primary-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 0.8rem;
+}
+
+.reservation-content .primary-button span {
+    transition: transform 0.3s ease;
+}
+
+.reservation-content .primary-button:hover span {
+    transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+
+    .reservation-cta {
+        padding: 6rem 1rem;
+    }
+
+    .reservation-content {
+        width: 100%;
+    }
+
+}
+
+/* =========================
+   Reviews Section
+========================= */
+
+.reviews-section {
+    padding: 8rem 0;
+
+    background: #0d0c0b;
+}
+
+.reviews-container {
+    width: min(1100px, 90%);
+
+    margin: 0 auto;
+}
+
+.reviews-heading {
+    max-width: 600px;
+
+    margin: 0 auto 4rem;
+
+    text-align: center;
+}
+
+.reviews-heading h2 {
+    margin: 0;
+
+    color: var(--cream);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(3rem, 6vw, 5rem);
+
+    font-weight: 500;
+
+    line-height: 0.95;
+}
+
+.reviews-heading h2 span {
+    display: block;
+
+    color: var(--gold);
+
+    font-style: italic;
+}
+
+
+/* Review Grid */
+
+.reviews-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 1rem;
+}
+
+
+/* Review Card */
+
+.review-card {
+    padding: 2rem;
+
+    background: #151413;
+
+    border: 1px solid rgba(245, 240, 230, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(212, 175, 55, 0.35);
+}
+
+
+/* Stars */
+
+.review-stars {
+    margin-bottom: 1.2rem;
+
+    color: var(--gold);
+
+    letter-spacing: 0.15rem;
+
+    font-size: 0.8rem;
+}
+
+
+/* Review Text */
+
+.review-text {
+    margin: 0 0 1.5rem;
+
+    color: rgba(245, 240, 230, 0.7);
+
+    font-size: 0.85rem;
+
+    line-height: 1.8;
+}
+
+
+/* Author */
+
+.review-author {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.2rem;
+}
+
+.review-author strong {
+    color: var(--cream);
+
+    font-size: 0.85rem;
+}
+
+.review-author span {
+    color: rgba(245, 240, 230, 0.4);
+
+    font-size: 0.7rem;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .reviews-section {
+        padding: 6rem 0;
+    }
+
+    .reviews-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* =========================
+   Footer
+========================= */
+
+.site-footer {
+    padding: 5rem 0 1.5rem;
+
+    background: #090908;
+
+    border-top: 1px solid rgba(245, 240, 230, 0.08);
+}
+
+.footer-container {
+    width: min(1100px, 90%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1.5fr;
+
+    gap: 4rem;
+}
+
+
+/* Footer Brand */
+
+.footer-logo {
+    display: inline-flex;
+
+    flex-direction: column;
+
+    color: var(--cream);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 2rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+.footer-logo span {
+    color: var(--gold);
+
+    font-size: 0.8rem;
+
+    letter-spacing: 0.25rem;
+
+    text-transform: uppercase;
+}
+
+.footer-brand p {
+    max-width: 320px;
+
+    margin-top: 1.2rem;
+
+    color: rgba(245, 240, 230, 0.45);
+
+    font-size: 0.8rem;
+
+    line-height: 1.8;
+}
+
+
+/* Footer Columns */
+
+.footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 0.7rem;
+}
+
+.footer-column h3 {
+    margin: 0 0 0.7rem;
+
+    color: var(--cream);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.4rem;
+
+    font-weight: 500;
+}
+
+.footer-column a,
+.footer-column p {
+    margin: 0;
+
+    color: rgba(245, 240, 230, 0.45);
+
+    font-size: 0.75rem;
+
+    line-height: 1.6;
+
+    text-decoration: none;
+
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--gold);
+}
+
+
+/* Footer Bottom */
+
+.footer-bottom {
+    width: min(1100px, 90%);
+
+    margin: 4rem auto 0;
+
+    padding-top: 1.5rem;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 1rem;
+
+    border-top: 1px solid rgba(245, 240, 230, 0.06);
+}
+
+.footer-bottom p {
+    margin: 0;
+
+    color: rgba(245, 240, 230, 0.3);
+
+    font-size: 0.65rem;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .site-footer {
+        padding-top: 4rem;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+
+        gap: 2.5rem;
+    }
+
+    .footer-brand p {
+        max-width: 100%;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        margin-top: 3rem;
     }
 
 }
