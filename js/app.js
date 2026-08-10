@@ -5,7 +5,7 @@
 
 
 /* =========================================
-   1. Always Start Page From Top
+   1. ALWAYS START PAGE FROM TOP
 ========================================= */
 
 if ("scrollRestoration" in history) {
@@ -18,12 +18,13 @@ window.addEventListener("beforeunload", function () {
 
 
 /* =========================================
-   2. Loading Screen
+   2. LOADING SCREEN
 ========================================= */
 
 window.addEventListener("load", function () {
 
-    const loader = document.getElementById("loader");
+    const loader =
+        document.getElementById("loader");
 
     if (loader) {
 
@@ -39,7 +40,7 @@ window.addEventListener("load", function () {
 
 
 /* =========================================
-   3. Mobile Navigation
+   3. MOBILE NAVIGATION
 ========================================= */
 
 const menuToggle =
@@ -65,28 +66,35 @@ if (menuToggle && navLinks) {
         navLinks.querySelectorAll("a");
 
 
-    navigationLinks.forEach(function (link) {
+    navigationLinks.forEach(
+        function (link) {
 
-        link.addEventListener(
-            "click",
-            function () {
+            link.addEventListener(
+                "click",
+                function () {
 
-                navLinks.classList.remove("open");
+                    navLinks.classList.remove(
+                        "open"
+                    );
 
-            }
-        );
+                }
+            );
 
-    });
+        }
+    );
 
 }
 
 
 /* =========================================
-   4. Home Menu Category Filter
+   4. HOME MENU CATEGORY FILTER
 ========================================= */
 
 const menuCategories =
-    document.querySelectorAll(".menu-category");
+    document.querySelectorAll(
+        ".menu-category"
+    );
+
 
 const menuCards =
     document.querySelectorAll(
@@ -94,59 +102,69 @@ const menuCards =
     );
 
 
-menuCategories.forEach(function (categoryButton) {
+menuCategories.forEach(
+    function (categoryButton) {
 
-    categoryButton.addEventListener(
-        "click",
-        function () {
+        categoryButton.addEventListener(
+            "click",
+            function () {
 
-            const selectedCategory =
-                categoryButton.dataset.category;
-
-
-            menuCategories.forEach(
-                function (button) {
-
-                    button.classList.remove("active");
-
-                }
-            );
+                const selectedCategory =
+                    categoryButton.dataset.category;
 
 
-            categoryButton.classList.add("active");
+                menuCategories.forEach(
+                    function (button) {
 
-
-            menuCards.forEach(
-                function (card) {
-
-                    const cardCategory =
-                        card.dataset.category;
-
-
-                    if (
-                        cardCategory ===
-                        selectedCategory
-                    ) {
-
-                        card.classList.add("show");
-
-                    } else {
-
-                        card.classList.remove("show");
+                        button.classList.remove(
+                            "active"
+                        );
 
                     }
+                );
 
-                }
-            );
 
-        }
-    );
+                categoryButton.classList.add(
+                    "active"
+                );
 
-});
+
+                menuCards.forEach(
+                    function (card) {
+
+                        const cardCategory =
+                            card.dataset.category;
+
+
+                        if (
+                            cardCategory ===
+                            selectedCategory
+                        ) {
+
+                            card.classList.add(
+                                "show"
+                            );
+
+                        } else {
+
+                            card.classList.remove(
+                                "show"
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
 
 
 /* =========================================
-   5. Full Menu Category Filter
+   5. FULL MENU CATEGORY FILTER
 ========================================= */
 
 const menuCategoryButtons =
@@ -154,63 +172,68 @@ const menuCategoryButtons =
         ".full-menu-category"
     );
 
+
 const menuGroups =
     document.querySelectorAll(
         ".full-menu-grid"
     );
 
 
-menuCategoryButtons.forEach(function (button) {
+menuCategoryButtons.forEach(
+    function (button) {
 
-    button.addEventListener(
-        "click",
-        function () {
+        button.addEventListener(
+            "click",
+            function () {
 
-            const selectedCategory =
-                button.dataset.category;
-
-
-            menuCategoryButtons.forEach(
-                function (item) {
-
-                    item.classList.remove(
-                        "active"
-                    );
-
-                }
-            );
+                const selectedCategory =
+                    button.dataset.category;
 
 
-            button.classList.add("active");
+                menuCategoryButtons.forEach(
+                    function (item) {
 
-
-            menuGroups.forEach(
-                function (group) {
-
-                    if (
-                        group.dataset.menuGroup ===
-                        selectedCategory
-                    ) {
-
-                        group.hidden = false;
-
-                    } else {
-
-                        group.hidden = true;
+                        item.classList.remove(
+                            "active"
+                        );
 
                     }
+                );
 
-                }
-            );
 
-        }
-    );
+                button.classList.add(
+                    "active"
+                );
 
-});
+
+                menuGroups.forEach(
+                    function (group) {
+
+                        if (
+                            group.dataset.menuGroup ===
+                            selectedCategory
+                        ) {
+
+                            group.hidden = false;
+
+                        } else {
+
+                            group.hidden = true;
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    }
+);
 
 
 /* =========================================
-   6. Open Full Menu From Home Cards
+   6. HOME MENU CARDS → FULL MENU
 ========================================= */
 
 const homeMenuCards =
@@ -219,47 +242,49 @@ const homeMenuCards =
     );
 
 
-homeMenuCards.forEach(function (card) {
+homeMenuCards.forEach(
+    function (card) {
 
-    card.addEventListener(
-        "click",
-        function (event) {
+        card.addEventListener(
+            "click",
+            function (event) {
 
-            /*
-             * Do not open menu page if
-             * Add to Order was clicked.
-             */
+                /*
+                 * Do not open menu page
+                 * when Add to Order is clicked.
+                 */
 
-            if (
-                event.target.closest(
-                    ".add-to-cart"
-                )
-            ) {
+                if (
+                    event.target.closest(
+                        ".add-to-cart"
+                    )
+                ) {
 
-                return;
+                    return;
+
+                }
+
+
+                const category =
+                    card.dataset.category;
+
+
+                if (!category) {
+
+                    return;
+
+                }
+
+
+                window.location.href =
+                    "pages/menu.html?category=" +
+                    category;
 
             }
+        );
 
-
-            const category =
-                card.dataset.category;
-
-
-            if (!category) {
-
-                return;
-
-            }
-
-
-            window.location.href =
-                "pages/menu.html?category=" +
-                category;
-
-        }
-    );
-
-});
+    }
+);
 
 
 /* =========================================
@@ -272,6 +297,7 @@ homeMenuCards.forEach(function (card) {
 ----------------------------------------- */
 
 let orderItems = [];
+
 
 try {
 
@@ -296,13 +322,15 @@ try {
 const orderButton =
     document.createElement("button");
 
+
 orderButton.className =
     "floating-order-button";
 
+
 orderButton.type = "button";
 
-orderButton.innerHTML = `
 
+orderButton.innerHTML = `
     <span>🛒</span>
 
     <span>
@@ -312,10 +340,12 @@ orderButton.innerHTML = `
     <span class="order-count">
         0
     </span>
-
 `;
 
-document.body.appendChild(orderButton);
+
+document.body.appendChild(
+    orderButton
+);
 
 
 /* -----------------------------------------
@@ -325,8 +355,10 @@ document.body.appendChild(orderButton);
 const orderPanel =
     document.createElement("div");
 
+
 orderPanel.className =
     "order-panel";
+
 
 orderPanel.innerHTML = `
 
@@ -388,7 +420,10 @@ orderPanel.innerHTML = `
 
 `;
 
-document.body.appendChild(orderPanel);
+
+document.body.appendChild(
+    orderPanel
+);
 
 
 /* -----------------------------------------
@@ -420,7 +455,7 @@ const closeOrderButton =
 
 
 /* =========================================
-   Save Order
+   8. SAVE ORDER
 ========================================= */
 
 function saveOrder() {
@@ -434,14 +469,10 @@ function saveOrder() {
 
 
 /* =========================================
-   Render Order
+   9. RENDER ORDER
 ========================================= */
 
 function renderOrder() {
-
-    /*
-     * Clear old items
-     */
 
     orderItemsContainer.innerHTML = "";
 
@@ -485,14 +516,15 @@ function renderOrder() {
         function (item, index) {
 
             const itemTotal =
-                item.price *
-                item.quantity;
+                Number(item.price) *
+                Number(item.quantity);
 
 
             total += itemTotal;
 
+
             totalQuantity +=
-                item.quantity;
+                Number(item.quantity);
 
 
             const orderItem =
@@ -514,7 +546,9 @@ function renderOrder() {
                     </h3>
 
                     <span>
-                        $${item.price.toFixed(2)}
+                        $${Number(
+                            item.price
+                        ).toFixed(2)}
                     </span>
 
                 </div>
@@ -583,7 +617,7 @@ function renderOrder() {
 
 
     /* =====================================
-       Minus Buttons
+       MINUS BUTTONS
     ===================================== */
 
     const minusButtons =
@@ -606,12 +640,11 @@ function renderOrder() {
 
 
                     if (
-                        orderItems[index]
-                            .quantity > 1
+                        orderItems[index] &&
+                        orderItems[index].quantity > 1
                     ) {
 
-                        orderItems[index]
-                            .quantity--;
+                        orderItems[index].quantity--;
 
                     } else {
 
@@ -635,7 +668,7 @@ function renderOrder() {
 
 
     /* =====================================
-       Plus Buttons
+       PLUS BUTTONS
     ===================================== */
 
     const plusButtons =
@@ -657,8 +690,14 @@ function renderOrder() {
                         );
 
 
-                    orderItems[index]
-                        .quantity++;
+                    if (
+                        orderItems[index]
+                    ) {
+
+                        orderItems[index]
+                            .quantity++;
+
+                    }
 
 
                     saveOrder();
@@ -673,7 +712,7 @@ function renderOrder() {
 
 
     /* =====================================
-       Remove Entire Item Buttons
+       REMOVE ENTIRE ITEM
     ===================================== */
 
     const removeButtons =
@@ -695,11 +734,6 @@ function renderOrder() {
                         );
 
 
-                    /*
-                     * Remove the complete
-                     * item regardless of quantity.
-                     */
-
                     orderItems.splice(
                         index,
                         1
@@ -720,7 +754,7 @@ function renderOrder() {
 
 
 /* =========================================
-   8. Add To Order
+   10. ADD TO ORDER
 ========================================= */
 
 const addToCartButtons =
@@ -737,8 +771,7 @@ addToCartButtons.forEach(
             function (event) {
 
                 /*
-                 * Prevent the home menu
-                 * card from opening menu page.
+                 * Prevent home card navigation.
                  */
 
                 event.stopPropagation();
@@ -791,9 +824,7 @@ addToCartButtons.forEach(
                 renderOrder();
 
 
-                /* ---------------------------------
-                   Button Feedback
-                --------------------------------- */
+                /* Button feedback */
 
                 button.innerHTML =
                     `Added ✓ <span>+</span>`;
@@ -817,7 +848,7 @@ addToCartButtons.forEach(
 
 
 /* =========================================
-   9. Open Order Panel
+   11. OPEN ORDER PANEL
 ========================================= */
 
 orderButton.addEventListener(
@@ -833,7 +864,7 @@ orderButton.addEventListener(
 
 
 /* =========================================
-   10. Close Order Panel
+   12. CLOSE ORDER PANEL
 ========================================= */
 
 closeOrderButton.addEventListener(
@@ -847,20 +878,12 @@ closeOrderButton.addEventListener(
     }
 );
 
-
-/* =========================================
-   11. Initial Order Render
-========================================= */
-
-renderOrder();
-
 /* =========================================
    RESERVATION FORM
 ========================================= */
 
 const reservationForm =
     document.querySelector(".reservation-form");
-
 
 if (reservationForm) {
 
@@ -870,33 +893,43 @@ if (reservationForm) {
 
             event.preventDefault();
 
+            /* -----------------------------
+               Get Form Values
+            ----------------------------- */
 
             const name =
-                document.querySelector("#guest-name").value.trim();
+                document
+                    .querySelector("#guest-name")
+                    .value
+                    .trim();
 
             const date =
-                document.querySelector("#reservation-date").value;
+                document
+                    .querySelector("#reservation-date")
+                    .value;
 
             const time =
-             document.querySelector("#reservation-time").value.trim();
-
-const timePattern =
-    /^(0?[1-9]|1[0-2]):[0-5][0-9]\s?(AM|PM)$/i;
-
-if (!timePattern.test(time)) {
-
-    alert("Please enter a valid time, for example 7:30 PM.");
-
-    document
-        .querySelector("#reservation-time")
-        .focus();
-
-    return;
-}
+                document
+                    .querySelector("#reservation-time")
+                    .value
+                    .trim()
+                    .toUpperCase();
 
             const guests =
-                document.querySelector("#guests").value;
+                document
+                    .querySelector("#guests")
+                    .value;
 
+            const specialRequest =
+                document
+                    .querySelector("#special-request")
+                    .value
+                    .trim();
+
+
+            /* -----------------------------
+               Required Fields
+            ----------------------------- */
 
             if (!name || !date || !time || !guests) {
 
@@ -905,13 +938,124 @@ if (!timePattern.test(time)) {
                 );
 
                 return;
+            }
+
+
+            /* -----------------------------
+               Validate Date
+            ----------------------------- */
+
+            const selectedDate =
+                new Date(date + "T00:00:00");
+
+            const today = new Date();
+
+            today.setHours(0, 0, 0, 0);
+
+
+            if (selectedDate < today) {
+
+                alert(
+                    "Please select today or a future date."
+                );
+
+                return;
+            }
+
+
+            /* -----------------------------
+               Validate Time Format
+               Example: 07:30 PM
+            ----------------------------- */
+
+            const timePattern =
+                /^(0[1-9]|1[0-2]):([0-5][0-9]) (AM|PM)$/;
+
+
+            if (!timePattern.test(time)) {
+
+                alert(
+                    "Please enter a valid time, for example 07:30 PM."
+                );
+
+                document
+                    .querySelector("#reservation-time")
+                    .focus();
+
+                return;
+            }
+
+
+            /* -----------------------------
+               Convert Time
+               12-hour → 24-hour
+            ----------------------------- */
+
+            const timeParts =
+                time.split(" ");
+
+            const hourMinute =
+                timeParts[0];
+
+            const period =
+                timeParts[1];
+
+            let [hour, minute] =
+                hourMinute.split(":")
+                    .map(Number);
+
+
+            if (period === "AM" && hour === 12) {
+
+                hour = 0;
+
+            }
+
+            else if (period === "PM" && hour !== 12) {
+
+                hour += 12;
 
             }
 
 
-            /* Save reservation */
+            const totalMinutes =
+                (hour * 60) + minute;
 
-            const reservation = {
+
+            /* -----------------------------
+               Café Opening Hours
+               08:00 AM → 12:00 AM
+            ----------------------------- */
+
+            const openingTime =
+                8 * 60;
+
+            const closingTime =
+                24 * 60;
+
+
+            if (
+                totalMinutes < openingTime ||
+                totalMinutes >= closingTime
+            ) {
+
+                alert(
+                    "Please select a reservation time between 08:00 AM and 11:45 PM."
+                );
+
+                document
+                    .querySelector("#reservation-time")
+                    .focus();
+
+                return;
+            }
+
+
+            /* -----------------------------
+               Save Reservation
+            ----------------------------- */
+
+            const reservationData = {
 
                 name: name,
 
@@ -921,77 +1065,418 @@ if (!timePattern.test(time)) {
 
                 guests: guests,
 
-                specialRequest:
-                    document.querySelector(
-                        "#special-request"
-                    ).value.trim(),
-
-                order:
-                    orderItems
+                request: specialRequest
 
             };
 
 
             localStorage.setItem(
                 "midnightBloomReservation",
-                JSON.stringify(reservation)
+                JSON.stringify(reservationData)
             );
 
 
-            /* Confirmation */
+            /* -----------------------------
+               Go To Confirmation
+            ----------------------------- */
 
-            reservationForm.innerHTML = `
-
-                <div class="reservation-success">
-
-                    <p class="section-label">
-                        MIDNIGHT BLOOM
-                    </p>
-
-                    <h2>
-                        Your table is
-                        <span>waiting.</span>
-                    </h2>
-
-                    <p>
-                        Thank you, ${name}.
-                        Your reservation request has been
-                        saved successfully.
-                    </p>
-
-                    <div class="reservation-summary">
-
-                        <p>
-                            <strong>Date:</strong>
-                            ${date}
-                        </p>
-
-                        <p>
-                            <strong>Time:</strong>
-                            ${time}
-                        </p>
-
-                        <p>
-                            <strong>Guests:</strong>
-                            ${guests}
-                        </p>
-
-                    </div>
-
-                    <a
-                        href="../index.html"
-                        class="primary-button">
-
-                        Back to Home
-                        <span>→</span>
-
-                    </a>
-
-                </div>
-
-            `;
+            window.location.href =
+                "confirmation.html";
 
         }
     );
+
+}
+
+/* =========================================
+   14. INITIAL ORDER RENDER
+========================================= */
+
+renderOrder();
+
+/* =========================================
+   ORDER → CHECKOUT
+========================================= */
+
+const checkoutButton =
+    document.querySelector(".checkout-button");
+
+if (checkoutButton) {
+
+    checkoutButton.addEventListener(
+        "click",
+        function () {
+
+            if (orderItems.length === 0) {
+
+                alert(
+                    "Your order is empty. Please add something first."
+                );
+
+                return;
+            }
+
+            window.location.href =
+                "checkout.html";
+
+        }
+    );
+
+}
+
+/* =========================================
+   CHECKOUT PAGE
+========================================= */
+
+const checkoutItemsContainer =
+    document.querySelector("#checkout-items");
+
+const checkoutTotalElement =
+    document.querySelector("#checkout-total");
+
+
+if (checkoutItemsContainer && checkoutTotalElement) {
+
+    const savedOrder =
+        JSON.parse(
+            localStorage.getItem("midnightBloomOrder")
+        ) || [];
+
+
+    /* -----------------------------------------
+       Empty Order
+    ----------------------------------------- */
+
+    if (savedOrder.length === 0) {
+
+        checkoutItemsContainer.innerHTML = `
+            <div class="checkout-empty">
+
+                <p>
+                    Your order is empty.
+                </p>
+
+                <span>
+                    Please return to the menu
+                    and add something first.
+                </span>
+
+            </div>
+        `;
+
+        checkoutTotalElement.textContent = "$0.00";
+
+    }
+
+
+    /* -----------------------------------------
+       Show Saved Order
+    ----------------------------------------- */
+
+    else {
+
+        let total = 0;
+
+        checkoutItemsContainer.innerHTML = "";
+
+
+        savedOrder.forEach(function (item) {
+
+            const itemTotal =
+                item.price * item.quantity;
+
+            total += itemTotal;
+
+
+            const checkoutItem =
+                document.createElement("div");
+
+            checkoutItem.className =
+                "checkout-item";
+
+
+            checkoutItem.innerHTML = `
+
+                <div class="checkout-item-info">
+
+                    <h3>
+                        ${item.name}
+                    </h3>
+
+                    <span>
+                        $${item.price.toFixed(2)}
+                        × ${item.quantity}
+                    </span>
+
+                </div>
+
+
+                <strong class="checkout-item-price">
+                    $${itemTotal.toFixed(2)}
+                </strong>
+
+            `;
+
+
+            checkoutItemsContainer.appendChild(
+                checkoutItem
+            );
+
+        });
+
+
+        checkoutTotalElement.textContent =
+            `$${total.toFixed(2)}`;
+
+    }
+
+}
+
+/* =========================================
+   PLACE ORDER
+========================================= */
+
+const placeOrderButton =
+    document.querySelector("#place-order");
+
+if (placeOrderButton) {
+
+    placeOrderButton.addEventListener(
+        "click",
+        function () {
+
+            const name =
+                document
+                    .querySelector("#order-name")
+                    .value
+                    .trim();
+
+            const phone =
+                document
+                    .querySelector("#order-phone")
+                    .value
+                    .trim();
+
+            const orderType =
+                document
+                    .querySelector("#order-type")
+                    .value;
+
+
+            /* -----------------------------
+               Validate Customer Details
+            ----------------------------- */
+
+            if (!name || !phone || !orderType) {
+
+                alert(
+                    "Please complete your details before placing the order."
+                );
+
+                return;
+            }
+
+
+            /* -----------------------------
+               Get Current Order
+            ----------------------------- */
+
+            const currentOrder =
+                JSON.parse(
+                    localStorage.getItem(
+                        "midnightBloomOrder"
+                    )
+                ) || [];
+
+
+            if (currentOrder.length === 0) {
+
+                alert(
+                    "Your order is empty. Please add something from the menu."
+                );
+
+                return;
+            }
+
+
+            /* -----------------------------
+               Calculate Total
+            ----------------------------- */
+
+            let total = 0;
+
+            currentOrder.forEach(function (item) {
+
+                total +=
+                    item.price * item.quantity;
+
+            });
+
+
+            /* -----------------------------
+               Save Order Information
+            ----------------------------- */
+
+            const orderData = {
+
+                name: name,
+
+                phone: phone,
+
+                orderType: orderType,
+
+                items: currentOrder,
+
+                total: total
+
+            };
+
+
+            localStorage.setItem(
+                "midnightBloomCompletedOrder",
+                JSON.stringify(orderData)
+            );
+
+
+            /* -----------------------------
+               Go To Order Confirmation
+            ----------------------------- */
+
+            window.location.href =
+                "order-confirmation.html";
+
+        }
+    );
+
+}
+
+/* =========================================
+   ORDER CONFIRMATION PAGE
+========================================= */
+
+const confirmationItemsContainer =
+    document.querySelector("#confirmation-items");
+
+const confirmationName =
+    document.querySelector("#confirmation-name");
+
+const confirmationPhone =
+    document.querySelector("#confirmation-phone");
+
+const confirmationType =
+    document.querySelector("#confirmation-type");
+
+const confirmationTotal =
+    document.querySelector("#confirmation-total");
+
+
+if (
+    confirmationItemsContainer &&
+    confirmationName &&
+    confirmationPhone &&
+    confirmationType &&
+    confirmationTotal
+) {
+
+    const completedOrder =
+        JSON.parse(
+            localStorage.getItem(
+                "midnightBloomCompletedOrder"
+            )
+        );
+
+
+    /* -----------------------------------------
+       No Order Found
+    ----------------------------------------- */
+
+    if (!completedOrder) {
+
+        confirmationItemsContainer.innerHTML = `
+            <div class="checkout-empty">
+
+                <p>
+                    No recent order was found.
+                </p>
+
+                <span>
+                    Please return to the menu and
+                    place an order first.
+                </span>
+
+            </div>
+        `;
+
+    }
+
+
+    /* -----------------------------------------
+       Display Completed Order
+    ----------------------------------------- */
+
+    else {
+
+        confirmationName.textContent =
+            completedOrder.name;
+
+        confirmationPhone.textContent =
+            completedOrder.phone;
+
+        confirmationType.textContent =
+            completedOrder.orderType;
+
+
+        confirmationItemsContainer.innerHTML =
+            "";
+
+
+        completedOrder.items.forEach(
+            function (item) {
+
+                const itemTotal =
+                    item.price * item.quantity;
+
+
+                const confirmationItem =
+                    document.createElement("div");
+
+                confirmationItem.className =
+                    "confirmation-item";
+
+
+                confirmationItem.innerHTML = `
+
+                    <div class="confirmation-item-info">
+
+                        <h3>
+                            ${item.name}
+                        </h3>
+
+                        <span>
+                            $${item.price.toFixed(2)}
+                            × ${item.quantity}
+                        </span>
+
+                    </div>
+
+                    <strong class="confirmation-item-price">
+                        $${itemTotal.toFixed(2)}
+                    </strong>
+
+                `;
+
+
+                confirmationItemsContainer.appendChild(
+                    confirmationItem
+                );
+
+            }
+        );
+
+
+        confirmationTotal.textContent =
+            `$${completedOrder.total.toFixed(2)}`;
+
+    }
 
 }
